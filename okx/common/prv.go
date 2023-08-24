@@ -3,15 +3,16 @@ package common
 import (
 	"errors"
 	"fmt"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
 	"github.com/nntaoli-project/goex/v2/httpcli"
 	"github.com/nntaoli-project/goex/v2/logger"
 	"github.com/nntaoli-project/goex/v2/model"
 	"github.com/nntaoli-project/goex/v2/options"
 	"github.com/nntaoli-project/goex/v2/util"
-	"net/http"
-	"net/url"
-	"strings"
-	"time"
 )
 
 type Prv struct {
@@ -160,7 +161,6 @@ func (prv *Prv) DoAuthRequest(httpMethod, reqUrl string, params *url.Values, hea
 	}
 
 	if http.MethodPost == httpMethod {
-		params.Set("tag", "86d4a3bf87bcBCDE")
 		reqBody, _ := util.ValuesToJson(*params)
 		reqBodyStr = string(reqBody)
 	}
