@@ -156,11 +156,11 @@ func (prv *Prv) DoAuthRequest(httpMethod, reqUrl string, params *url.Values, hea
 		reqUri     string
 	)
 
-	if http.MethodGet == httpMethod {
+	if http.MethodGet == httpMethod && params != nil {
 		reqUrl += "?" + params.Encode()
 	}
 
-	if http.MethodPost == httpMethod {
+	if http.MethodPost == httpMethod && params != nil {
 		reqBody, _ := util.ValuesToJson(*params)
 		reqBodyStr = string(reqBody)
 	}
