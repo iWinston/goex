@@ -1,4 +1,4 @@
-module github.com/nntaoli-project/goex/v2
+module github.com/iwinston/goex/v2
 
 go 1.18
 
